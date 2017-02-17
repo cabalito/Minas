@@ -17,6 +17,7 @@ namespace Minas
 		private System.Windows.Forms.GroupBox groupBox1;
 		private int maxSize = 284;
 		private int buttonSize = 20;
+		private System.Windows.Forms.Label labelNumeroBombas;
 		private System.Windows.Forms.Button[] buttons;
 		
 		/// <summary>
@@ -45,7 +46,7 @@ namespace Minas
 			if(widthLateral<maxSize){
 				maxSize = widthLateral;
 			}
-			numColumns = (maxSize/20);
+			numColumns = (maxSize/buttonSize);
 			int totalButtonNumber = numColumns * numColumns;
 			
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,7 +55,16 @@ namespace Minas
 				this.buttons[i] = new System.Windows.Forms.Button();
 			}
 			this.groupBox1.SuspendLayout();
+			this.labelNumeroBombas = new System.Windows.Forms.Label();
 			this.SuspendLayout();
+						// 
+			// labelNumeroBombas
+			// 
+			this.labelNumeroBombas.Location = new System.Drawing.Point(maxSize + 50, 50);
+			this.labelNumeroBombas.Name = "labelNumeroBombas";
+			this.labelNumeroBombas.Size = new System.Drawing.Size(150, 23);
+			this.labelNumeroBombas.TabIndex = 0;
+			this.labelNumeroBombas.Text = "Numero de bombas: "+ tablero.getNumeroBombas();
 			// 
 			// groupBox1
 			// 
@@ -81,7 +91,7 @@ namespace Minas
 				}
 				
 				btn.Location = new System.Drawing.Point(buttonSize*f, buttonSize*c);
-				btn.Name = f.ToString() + c;
+				btn.Name = c.ToString() + f;
 				btn.Size = new System.Drawing.Size(buttonSize, buttonSize);
 				btn.TabIndex = 0;
 				btn.Text = f.ToString()+ c;
@@ -94,6 +104,7 @@ namespace Minas
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(400, 400);
 			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.labelNumeroBombas);
 			this.Name = "MainForm";
 			this.Text = "Minas";
 			this.groupBox1.ResumeLayout(false);

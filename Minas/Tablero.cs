@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,11 +13,13 @@ namespace Minas
 
         private int fils;
         private int cols;
+        private int numeroBombas;
 
         public Tablero(int f, int c)
         {
             this.fils = f+2;
             this.cols = c+2;
+            this.numeroBombas = 0;
             casillas = new Casilla[fils, cols];
             for (int i=0; i<fils; i++)
                 for(int j=0; j<cols; j++)
@@ -24,6 +27,17 @@ namespace Minas
 
             initTablero();
          }
+        
+        public int getNumeroBombas(){
+        	return this.numeroBombas;
+        }
+        
+        public Casilla getCasilla(System.Windows.Forms.Button btn){
+        	String name = btn.Name;
+			int f = Int32.Parse( name.Substring(0, 1));
+			int c = Int32.Parse(name.Substring(1,1));
+			return casillas[f, c];
+        }
 
         private void initTablero()
         {
@@ -33,6 +47,7 @@ namespace Minas
                     int valor = rnd.Next(100);
                     if (valor < 15)
                     { /// BOMBA
+                    	this.numeroBombas++;
                         this.casillas[f, c].ponBomba();
                         sumaUnoAlrededor(f, c);
                     }
@@ -49,7 +64,15 @@ namespace Minas
 	       				buttons[index].Text = this.casillas[f, c].ToString();
 	       				buttons[index].Enabled = false;
 	       			}else{
+       				buttons[index].Text = this.casillas[f, c].ToString();
 	       				buttons[index].Text = " ";
+	       				buttons[index].Enabled = true;
+	       				if(this.casillas[f, c].tieneBandera()){
+	       					buttons[index].BackColor = Color.Red;
+							buttons[index].Enabled = false;
+	       				}else{
+	       					buttons[index].BackColor = Color.Transparent;
+	       				}
 	       			}
        			index++;
                 }
@@ -76,6 +99,18 @@ namespace Minas
             }
         }
 
+        
+        public bool ponerBandera(System.Windows.Forms.Button btn){
+        	Casilla casilla = getCasilla(btn);
+        	if(casilla.hayBomba()){
+        		this.numeroBombas--;
+        		casilla.ponerBandera();
+				return true;
+        	}
+        	return false;
+        }
+        
+        
         public bool levanta(int f, int c)
         {
         	try{

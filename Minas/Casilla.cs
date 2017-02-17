@@ -10,12 +10,14 @@ namespace Minas
     {
         private bool levantada;
         private bool esBomba;
+        private bool esBandera;
         private int valor;
 
         public Casilla()
         {
             this.levantada = false;
             this.esBomba = false;
+            this.esBandera = false;
             this.valor = 0;
         }
 
@@ -26,11 +28,19 @@ namespace Minas
             else return "" + this.valor;
         }
 
+		public void ponerBandera()
+		{
+			this.esBandera = true;
+		}
         public void levanta()
         {
             this.levantada = true;
         }
 
+		public bool tieneBandera()
+		{
+			return esBandera;
+		}
         public void ponBomba()
         {
             this.esBomba = true;
