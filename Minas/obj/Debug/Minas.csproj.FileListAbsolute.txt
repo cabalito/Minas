@@ -1,0 +1,8 @@
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\Minas.exe.config
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\Minas.exe
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\Minas.pdb
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.csprojResolveAssemblyReference.cache
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.exe
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.pdb
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.MainForm.resources
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.csproj.GenerateResource.Cache
