@@ -14,15 +14,23 @@ namespace Minas
         private int fils;
         private int cols;
         private int numeroBombas;
+        private int difficulty;
 
-        public Tablero(int f, int c)
+        public Tablero(int f, int c, int difficulty)
         {
             this.fils = f+2;
             this.cols = c+2;
+            this.difficulty = difficulty;
             this.numeroBombas = 0;
             casillas = new Casilla[fils, cols];
-            for (int i=0; i<fils; i++)
-                for(int j=0; j<cols; j++)
+            for (int i=0; i<fils; i++){
+            	for(int j=0; j<cols; j++){
+                    this.casillas[i,j] = new Casilla();
+                    this.casillas[i,j].sumaUno();
+            	}
+            }
+            for (int i=1; i<fils-1; i++)
+                for(int j=1; j<cols-1; j++)
                     this.casillas[i,j] = new Casilla();
 
             initTablero();
@@ -34,8 +42,8 @@ namespace Minas
         
         public Casilla getCasilla(System.Windows.Forms.Button btn){
         	String name = btn.Name;
-			int f = Int32.Parse( name.Substring(0, 1));
-			int c = Int32.Parse(name.Substring(1,1));
+			int f = Int32.Parse( name.Substring(0, 2));
+			int c = Int32.Parse(name.Substring(2,2));
 			return casillas[f, c];
         }
 
@@ -45,7 +53,7 @@ namespace Minas
             for (int f = 1; f < this.fils - 1; f++){
                 for (int c = 1; c < this.cols - 1; c++){                    
                     int valor = rnd.Next(100);
-                    if (valor < 15)
+                    if (valor < difficulty)
                     { /// BOMBA
                     	this.numeroBombas++;
                         this.casillas[f, c].ponBomba();
@@ -64,8 +72,7 @@ namespace Minas
 	       				buttons[index].Text = this.casillas[f, c].ToString();
 	       				buttons[index].Enabled = false;
 	       			}else{
-       				buttons[index].Text = this.casillas[f, c].ToString();
-	       				buttons[index].Text = " ";
+       					buttons[index].Text = this.casillas[f, c].ToString();
 	       				buttons[index].Enabled = true;
 	       				if(this.casillas[f, c].tieneBandera()){
 	       					buttons[index].BackColor = Color.Red;
@@ -103,8 +110,8 @@ namespace Minas
         public bool ponerBandera(System.Windows.Forms.Button btn){
         	Casilla casilla = getCasilla(btn);
         	if(casilla.hayBomba()){
-        		this.numeroBombas--;
         		casilla.ponerBandera();
+        		this.numeroBombas--;
 				return true;
         	}
         	return false;
@@ -113,8 +120,6 @@ namespace Minas
         
         public bool levanta(int f, int c)
         {
-        	try{
-        	
             this.casillas[f, c].levanta();
             if (this.casillas[f, c].hayBomba())
                 return true;
@@ -128,9 +133,7 @@ namespace Minas
             }
 
             return false;
-        	}catch(IndexOutOfRangeException e){
-        		return false;
-        	}
+
         }
     }
 }

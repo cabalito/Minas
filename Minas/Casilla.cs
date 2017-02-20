@@ -23,8 +23,8 @@ namespace Minas
 
         public override string ToString()
         {
-            if (!levantada) return "X";
-            else if (esBomba) return "B";
+            if (!levantada) return " ";
+            else if (esBomba) return "☠";
             else return "" + this.valor;
         }
 
