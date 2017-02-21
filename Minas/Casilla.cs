@@ -10,27 +10,37 @@ namespace Minas
     {
         private bool levantada;
         private bool esBomba;
+        private bool esBandera;
         private int valor;
 
         public Casilla()
         {
             this.levantada = false;
             this.esBomba = false;
+            this.esBandera = false;
             this.valor = 0;
         }
 
         public override string ToString()
         {
-            if (!levantada) return "X";
-            else if (esBomba) return "B";
+            if (!levantada) return " ";
+            else if (esBomba) return "☠";
             else return "" + this.valor;
         }
 
+		public void ponerBandera()
+		{
+			this.esBandera = true;
+		}
         public void levanta()
         {
             this.levantada = true;
         }
 
+		public bool tieneBandera()
+		{
+			return esBandera;
+		}
         public void ponBomba()
         {
             this.esBomba = true;
