@@ -79,7 +79,7 @@ namespace Minas
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "groupBox1";
 			// 
-			// button1
+			// buttons
 			//
 			int f=0; int c=1;
 			foreach (System.Windows.Forms.Button btn in buttons){
@@ -108,6 +108,9 @@ namespace Minas
 			this.comboBoxDificultad.Size = new System.Drawing.Size(121, 30);
 			this.comboBoxDificultad.TabIndex = 1;
 			this.comboBoxDificultad.Text = "Dificultad";
+			this.comboBoxDificultad.Items.Add(HIGHT_DIFFICULTY);
+			this.comboBoxDificultad.Items.Add(MEDIUM_DIFFICULTY);
+			this.comboBoxDificultad.Items.Add(LOW_DIFFICULTY);
 
 			
 			// 
@@ -119,6 +122,9 @@ namespace Minas
 			this.comboBoxTamanio.Size = new System.Drawing.Size(121, 30);
 			this.comboBoxTamanio.TabIndex = 1;
 			this.comboBoxTamanio.Text = "Tamaño";
+			this.comboBoxTamanio.Items.Add(LARGE_SIZE);
+			this.comboBoxTamanio.Items.Add(MEDIUM_SIZE);
+			this.comboBoxTamanio.Items.Add(SMALL_SIZE);
 			// 
 			// MainForm
 			// 
@@ -195,8 +201,16 @@ namespace Minas
 			this.Controls.Add(this.groupBox1);
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
-				
-			
+		}
+		
+		void AddListeners()
+		{
+			foreach (System.Windows.Forms.Button btn in buttons)
+			{
+			    btn.MouseDown  += (sender, args) => ButtonsClick(btn, sender, args);
+			}
+			comboBoxTamanio.SelectedIndexChanged += (sender, args) => ComboBoxesSelectedIndexChanged(comboBoxTamanio);
+			comboBoxDificultad.SelectedIndexChanged += (sender, args) => ComboBoxesSelectedIndexChanged(comboBoxDificultad);
 		}
 	}
 }
