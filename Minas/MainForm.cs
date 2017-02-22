@@ -18,11 +18,11 @@ namespace Minas
 	{
 		private Tablero tablero;
 		
-		private const string WINNER_CAPTION = "";
-		private const string WINNER_MESSAGE = "";
+		private const string WINNER_CAPTION = "WINNER!";
+		private const string WINNER_MESSAGE = "¡Has ganado! ¿Deseas volver a jugar?";
 		
-		private const string LOOSER_CAPTION = "";
-		private const string LOOSER_MESSAGE = "";
+		private const string LOOSER_CAPTION = "LOOSER!";
+		private const string LOOSER_MESSAGE = "¡Has perdido! ¿Deseas volver a jugar?";
 		
 		private const string HIGHT_DIFFICULTY = "Alta";
 		private const string MEDIUM_DIFFICULTY = "Media";

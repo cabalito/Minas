@@ -6,3 +6,5 @@ C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.ex
 C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.pdb
 C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.MainForm.resources
 C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.csproj.GenerateResource.Cache
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\ScoreDataBase.mdf
+C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\ScoreDataBase_log.ldf
