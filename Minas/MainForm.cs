@@ -17,7 +17,9 @@ namespace Minas
 	public partial class MainForm : Form
 	{
 		private Tablero tablero;
-		
+
+        private const string NICKNAME_MESSAGE = "Introduce tu nickname...";
+
 		private const string WINNER_CAPTION = "WINNER!";
 		private const string WINNER_MESSAGE = "¡Has ganado! ¿Deseas volver a jugar?";
 		
@@ -42,6 +44,7 @@ namespace Minas
 		
 		private int numColumns;
 		private int difficulty;
+        private string nickName;
 		
 		public MainForm()
 		{
@@ -53,6 +56,7 @@ namespace Minas
 
 		private void UpdateVariables(int numColumn, int difficulty)
 		{
+            this.nickName = "Player";
 			this.numColumns = numColumn;
 			this.difficulty = difficulty;
 			this.tablero = new Tablero(numColumns, numColumns, difficulty);
@@ -103,7 +107,7 @@ namespace Minas
 				int f = Int32.Parse(name.Substring(0, 2));
 				int c = Int32.Parse(name.Substring(2,2));
 				if(tablero.levanta(f, c)){
-					UpdateForm();
+                   	UpdateForm();
 					ShowLooserMessage();
 				}
 			}
@@ -128,10 +132,25 @@ namespace Minas
 		}
 		
 		private void ShowWinnerMessage(){
-			ShowOptionMessage(WINNER_MESSAGE, WINNER_CAPTION);
+            AddNewRecord();
+            ShowOptionMessage(WINNER_MESSAGE, WINNER_CAPTION);
 		}
-		
+
+        private void AddNewRecord()
+        {
+
+            ScoreEntitiesMinas scoreEntities = new ScoreEntitiesMinas();
+            Score score = new Score();
+            score.Nick = "SS";
+            score.Bombs = 1;
+            score.Difficulty = 1;
+            scoreEntities.Scores.Add(score);
+            scoreEntities.SaveChanges();
+            
+        }
+
 		private void ShowLooserMessage(){
+            AddNewRecord();
 			ShowOptionMessage(LOOSER_MESSAGE, LOOSER_CAPTION);
 		}
 		

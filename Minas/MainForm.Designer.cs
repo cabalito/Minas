@@ -20,6 +20,7 @@ namespace Minas
 		private System.Windows.Forms.Button[] buttons;
 		private System.Windows.Forms.ComboBox comboBoxDificultad;
 		private System.Windows.Forms.ComboBox comboBoxTamanio;
+        private System.Windows.Forms.TextBox textBoxNickName;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -44,6 +45,7 @@ namespace Minas
 		{
 			int widthLateral = numColumns*buttonSize;
 			numColumns = (widthLateral/buttonSize);
+            this.textBoxNickName = new System.Windows.Forms.TextBox();
 			int totalButtonNumber = numColumns * numColumns;
 			this.comboBoxDificultad = new System.Windows.Forms.ComboBox();
 			this.comboBoxTamanio = new System.Windows.Forms.ComboBox();
@@ -56,8 +58,8 @@ namespace Minas
 			this.groupBox1.SuspendLayout();
 			this.labelNumeroBombas = new System.Windows.Forms.Label();
 			this.SuspendLayout();
-			
-			
+           
+          		
 			// 
 			// labelNumeroBombas
 			// 
@@ -103,7 +105,7 @@ namespace Minas
 			// comboBoxDificultad
 			// 
 			this.comboBoxDificultad.FormattingEnabled = true;
-			this.comboBoxDificultad.Location = new System.Drawing.Point(widthLateral + 50, 70);
+			this.comboBoxDificultad.Location = new System.Drawing.Point(widthLateral + 50, 80);
 			this.comboBoxDificultad.Name = "comboBoxDificultad";
 			this.comboBoxDificultad.Size = new System.Drawing.Size(121, 30);
 			this.comboBoxDificultad.TabIndex = 1;
@@ -117,7 +119,7 @@ namespace Minas
 			// comboBoxTamanio
 			// 
 			this.comboBoxTamanio.FormattingEnabled = true;
-			this.comboBoxTamanio.Location = new System.Drawing.Point(widthLateral + 50, 90);
+			this.comboBoxTamanio.Location = new System.Drawing.Point(widthLateral + 50, 100);
 			this.comboBoxTamanio.Name = "comboBoxTamanio";
 			this.comboBoxTamanio.Size = new System.Drawing.Size(121, 30);
 			this.comboBoxTamanio.TabIndex = 1;
@@ -125,6 +127,16 @@ namespace Minas
 			this.comboBoxTamanio.Items.Add(LARGE_SIZE);
 			this.comboBoxTamanio.Items.Add(MEDIUM_SIZE);
 			this.comboBoxTamanio.Items.Add(SMALL_SIZE);
+
+            // 
+            // textBoxNick
+            // 
+            this.textBoxNickName.Location = new System.Drawing.Point(widthLateral + 50, 120);
+            this.textBoxNickName.Name = "NickName";
+            this.textBoxNickName.Text = NICKNAME_MESSAGE;
+            this.textBoxNickName.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxNickName.Size = new System.Drawing.Size(121, 30);
+            this.textBoxNickName.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -135,6 +147,7 @@ namespace Minas
 			this.Controls.Add(this.labelNumeroBombas);
 			this.Controls.Add(this.comboBoxDificultad);
 			this.Controls.Add(this.comboBoxTamanio);
+            this.Controls.Add(this.textBoxNickName);
 			this.Name = "MainForm";
 			this.Text = "Minas";
 			this.groupBox1.ResumeLayout(false);
