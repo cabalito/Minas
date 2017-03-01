@@ -18,7 +18,7 @@ namespace Minas
 	{
 		private Tablero tablero;
 
-        private const string NICKNAME_MESSAGE = "Introduce tu nickname...";
+        private const string NICKNAME_MESSAGE = "Player";
 
 		private const string WINNER_CAPTION = "WINNER!";
 		private const string WINNER_MESSAGE = "¡Has ganado! ¿Deseas volver a jugar?";
@@ -132,27 +132,27 @@ namespace Minas
 		}
 		
 		private void ShowWinnerMessage(){
-            AddNewRecord();
             ShowOptionMessage(WINNER_MESSAGE, WINNER_CAPTION);
-		}
+            AddNewRecord();
+        }
 
         private void AddNewRecord()
         {
 
-            ScoreEntitiesMinas scoreEntities = new ScoreEntitiesMinas();
+            ScoreEntities scoreEntities = new ScoreEntities();
             Score score = new Score();
-            score.Nick = "SS";
-            score.Bombs = 1;
-            score.Difficulty = 1;
+            score.Nick = this.textBoxNickName.Text;
+            score.Bombs = tablero.getNumeroBombas();
+            score.Difficulty = this.difficulty;
             scoreEntities.Scores.Add(score);
             scoreEntities.SaveChanges();
             
         }
 
 		private void ShowLooserMessage(){
-            AddNewRecord();
 			ShowOptionMessage(LOOSER_MESSAGE, LOOSER_CAPTION);
-		}
+            AddNewRecord();
+        }
 		
 		private void ShowOptionMessage(string message, string caption){
 			MessageBoxButtons options = MessageBoxButtons.YesNo;

@@ -8,3 +8,15 @@ C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.Ma
 C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\obj\Debug\Minas.csproj.GenerateResource.Cache
 C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\ScoreDataBase.mdf
 C:\Users\jmolinma\Documents\SharpDevelop Projects\Minas\Minas\bin\Debug\ScoreDataBase_log.ldf
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\Minas.exe.config
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\obj\Debug\Minas.exe
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\obj\Debug\Minas.pdb
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\Minas.exe
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\Minas.pdb
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\EntityFramework.dll
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\EntityFramework.xml
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\obj\Debug\Minas.csprojResolveAssemblyReference.cache
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\obj\Debug\Minas.MainForm.resources
+C:\Users\WIN8\Documents\GitHub\Minas\Minas\obj\Debug\Minas.csproj.GenerateResource.Cache
